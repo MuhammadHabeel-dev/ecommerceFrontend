@@ -46,6 +46,30 @@ export const registerUser = async (formData: FormData) => {
 };
 
 
+//Step For Login User
+
+export interface LoginCredentials {
+  email: string;
+  password: string;
+}
+
+export async function loginUser(credentials: LoginCredentials) {
+  const res = await fetch(`${API_URL}/login`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(credentials),
+  });
+
+  const data = await res.json();
+
+  if (!res.ok) {
+    throw new Error(data.message || 'Login failed.');
+  }
+
+  return data;
+}
+
+
 // const API_URL = 'https://ecommerce.codiea.io'; // Your live backend domain
 
 // function getCookie(name: string) {

@@ -25,7 +25,7 @@ export default function HomePage() {
       <Header/>
       <Banner/>
       <BrowseByCategory/>
-      <h1 className="text-2xl">Welcome to the homepage</h1>
+      <h1 className="text-2xl text-center">Welcome to the homepage</h1>
     
     </>
   );
